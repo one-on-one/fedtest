@@ -34,7 +34,7 @@ As a vistitor of the landing page, I need to be asked an additional question cal
 - Master Degree
 - Doctoral Degree
 
-**More Advanced** (optional): These options may change in the future and are available via an API. Make JSONP request to `http://fedtest.aws.af.cm/` and populate the options in the form using the result.
+**More Advanced** (optional): These options may change in the future and are available via an API. Make a JSONP request to `http://fedtest.aws.af.cm/` and populate the options in the form using the result.
 
 ### Add JavaScirpt Validation
 
@@ -49,8 +49,8 @@ As a person filling out the form on the landing page I need to receive feeback e
 As a visitor of the landing page on a mobile device of any size, the page layout needs to be optimimal for my device without being redirected to a different page. The layout must always:
 
 - match the current style
-- allow text can be read easily without zooming or horizontal scrolling
-- the form is prominent and easy to fill out
+- make sure text can be read easily without zooming or horizontal scrolling
+- ensure the form is prominent and easy to fill out
 
 ## Questions?
 
