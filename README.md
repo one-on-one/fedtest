@@ -12,15 +12,15 @@ If you don't already have a GitHub account you will need to register first. A wo
 
 ### 2. Complete the User Stories
 
-At One on One we use the agile development methodology [Scrum][1]. If you are unfamiliar with scrum, a user story represents an indpendant piece of work that needs to be done written from the perspective of the user. This test consists of three small stories (below). Please commit often as you make progress. Detailed commit messages will help us learn more about how you work.
+At One on One we use the agile development methodology [Scrum][1]. If you are unfamiliar with scrum, a user story represents an indpendent piece of work written from the perspective of the user. This test consists of three small stories (below). Please commit often as you make progress. Detailed commit messages will help us learn more about how you work.
 
 ### 3. Make Any Additional Improvements (optional)
 
-If you feel that any of the existing markup or CSS can be improved in any way feel free to make changes. Our only request is that you make a separate commit for each thing you change. In your commit message please include a shot description of why it is an improvement.
+If you feel that any of the existing markup or CSS can be improved in any way feel free to make changes. Our only request is that you make a separate commit for each thing you change. In your commit message please include a short description of why it is an improvement.
 
 ### 4. Submit a Pull Request
 
-After you have completed the changes to your work, you will submit a pull request. This is how you submit your test. You may receive feedback in the form of comments on the pull request or at the very least a confirmation that we received your work and will review it.
+After you have completed the changes to your work, you will submit a pull request. This is how you submit your test. You may receive feedback in the comments of the pull request, or at the very least, a confirmation that we received your work and will review it.
 
 ## User Stories
 
