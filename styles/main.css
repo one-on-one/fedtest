@@ -6,16 +6,18 @@ body {
 }
 body > header {
   background-color: #586e75;
-  padding: 40px 0;
+  padding: 40px;
   text-align: center;
   color: white;
 }
 body > header h1 {
   margin: 0;
+  line-height: 1.4em;
 }
 main {
   display: block;
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   padding: 300px 0 0;
   *zoom: 1;
@@ -32,8 +34,8 @@ main:after {
 main form {
   float: right;
   width: 300px;
-  padding: 30px;
   margin: -280px 20px 0;
+  padding: 30px;
   background-color: white;
   position: relative;
   border: 1px solid #839496;
@@ -42,9 +44,8 @@ main form {
   -webkit-box-shadow: 4px 4px 0 rgba(90, 90, 90, 0.4);
 }
 main form h2 {
-  margin: 0;
-  padding: 20px 29px;
   margin: -29px -29px 20px;
+  padding: 20px 29px;
   text-align: center;
   background-color: #dddddd;
   color: #586e75;
@@ -67,6 +68,7 @@ main form label input {
 main form .education-levels {
   background: #dddddd;
   border: none;
+  margin: 0;
   padding: .5em 1.5em;
   min-height: 40px;
   border-radius: 8px;
@@ -114,7 +116,6 @@ main form .education-levels label input {
 }
 main form .actions button {
   width: 100%;
-  padding: 10px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -127,9 +128,82 @@ main form .actions button {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   margin-top: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 main .content {
   width: 520px;
   padding-left: 20px;
+}
+@media screen and (max-width: 790px) {
+  main {
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  main form {
+    float: none;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: -15% 0 0;
+    *zoom: 1;
+  }
+  main form:before,
+  main form:after {
+    content: "";
+    display: table;
+  }
+  main form:after {
+    clear: both;
+  }
+  main form .f-fname,
+  main form .f-lname,
+  main form .education-levels,
+  main form .actions {
+    width: 49%;
+    float: left;
+  }
+  main form .f-lname,
+  main form .actions {
+    float: right;
+  }
+  main form .education-levels {
+    margin-top: 20px;
+  }
+  main form .f-phone {
+    clear: both;
+  }
+  main .content {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 660px) {
+  main form .education-levels legend:after {
+    border-width: 4px;
+    margin-top: -2px;
+    right: 1em;
+  }
+}
+@media screen and (max-width: 550px) {
+  main form .f-fname,
+  main form .f-lname,
+  main form .education-levels,
+  main form .actions {
+    width: 100%;
+    float: none;
+  }
+  main form .education-levels {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  main form .education-levels,
+  main form .actions button {
+    font-size: .9em;
+  }
 }
