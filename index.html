@@ -1,51 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Front-End Developer Test</title>
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body>
-    <div class="header">
-      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-    </div>
-    <div class="container">
-      <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
-        <h2>Nibh Hendrerit Sodales</h2>
-        <label>
-          First Name:
-          <input type="text" name="first_name" />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="last_name" />
-        </label>
-        <label>
-          Phone Number:
-          <input type="text" name="phone" />
-        </label>
-        <label>
-          Email Address:
-          <input type="text" name="email" />
-        </label>
-        <div class="actions">
-          <button type="submit">Request Information</button>
-        </div>
-      </form>
-      <div class="content">
-        <p>
-          Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. 
-          Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis 
-          pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo 
-          sapien, faucibus eu aliquet et, molestie quis orci.
-        </p>
-        <p>
-          Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae 
-          lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget 
-          semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.
-        </p>
-      </div>
-    </div>
-  </body>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<title>Front-End Developer Test</title>
+	<link rel="stylesheet" href="styles/main.css"/>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/headjs/0.99/head.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+	</header>
+	<main>
+		<form method="post" action="index.html" onsubmit="return validate(this)" novalidate="novalidate">
+			<h2>Nibh Hendrerit Sodales</h2>
+			<label class="f-fname">First Name: <input type="text" name="first_name" required="required" data-required-message="Please enter your first name."/></label>
+			<label class="f-lname">Last Name: <input type="text" name="last_name" required="required" data-required-message="Please enter your last name."/></label>
+			<label class="f-phone">Phone Number: <input type="tel" name="phone" required="required" placeholder="eg: (555) 555-5555" data-required-message="Please enter your phone number."/></label>
+			<label class="f-email">Email Address: <input type="email" name="email" required="required" data-required-message="Please enter your email address."/></label>
+			<fieldset id="edu" class="education-levels">
+				<legend>Current Education Level</legend>
+				<div id="edufields"></div>
+			</fieldset>
+			<div class="actions">
+				<div id="messages" class="error"></div>
+				<button type="submit">Request Information</button>
+			</div>
+		</form>
+		<div class="content">
+			<p>Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo sapien, faucibus eu aliquet et, molestie quis orci.</p>
+			<p>Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.</p>
+		</div>
+	</main>
+	<script>
+		head.js("scripts/fedTest.js");
+	</script>
+</body>
 </html>
