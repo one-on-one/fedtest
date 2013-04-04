@@ -14,7 +14,7 @@ body > header h1 {
   margin: 0;
   line-height: 1.4em;
 }
-main {
+body main {
   display: block;
   width: 100%;
   max-width: 960px;
@@ -23,15 +23,15 @@ main {
   *zoom: 1;
   background: transparent url(../images/banner.jpg) no-repeat;
 }
-main:before,
-main:after {
+body main:before,
+body main:after {
   content: "";
   display: table;
 }
-main:after {
+body main:after {
   clear: both;
 }
-main form {
+form {
   float: right;
   width: 300px;
   margin: -280px 20px 0;
@@ -43,20 +43,20 @@ main form {
   -moz-box-shadow: 4px 4px 0 rgba(90, 90, 90, 0.4);
   -webkit-box-shadow: 4px 4px 0 rgba(90, 90, 90, 0.4);
 }
-main form h2 {
+form h2 {
   margin: -29px -29px 20px;
   padding: 20px 29px;
   text-align: center;
   background-color: #dddddd;
   color: #586e75;
 }
-main form label {
+form label {
   display: block;
   margin-bottom: .8em;
   color: #222222;
   font-size: .9em;
 }
-main form label input {
+form label input {
   display: block;
   width: 100%;
   padding: 5px;
@@ -65,7 +65,7 @@ main form label input {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-main form .education-levels {
+form .education-levels {
   background: #dddddd;
   border: none;
   margin: 0;
@@ -79,7 +79,7 @@ main form .education-levels {
   -webkit-box-sizing: border-box;
   position: relative;
 }
-main form .education-levels legend {
+form .education-levels legend {
   font-weight: bold;
   position: absolute;
   top: 0;
@@ -90,7 +90,7 @@ main form .education-levels legend {
   line-height: 40px;
   cursor: pointer;
 }
-main form .education-levels legend:after {
+form .education-levels legend:after {
   content: '';
   width: 0;
   height: 0;
@@ -102,33 +102,33 @@ main form .education-levels legend:after {
   right: 2em;
   margin-top: -3px;
 }
-main form .education-levels #edufields {
+form .education-levels #edufields {
   margin: 40px 0 0;
 }
-main form .education-levels label {
+form .education-levels label {
   cursor: pointer;
   margin: 3px 0;
 }
-main form .education-levels label input {
+form .education-levels label input {
   display: inline-block;
   width: auto;
   margin: 0 6px 0 0;
 }
-main form .actions .error ol {
+form .actions .error ol {
   margin: 1em 0 0;
   padding: 0;
 }
-main form .actions .error ol li {
+form .actions .error ol li {
   color: #ff5a20;
   list-style-position: inside;
   padding: .7em 0;
   font-weight: bold;
   border-top: 1px dotted #ffa586;
 }
-main form .actions .error ol li:first-child {
+form .actions .error ol li:first-child {
   border-top: none;
 }
-main form .actions button {
+form .actions button {
   width: 100%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -145,9 +145,23 @@ main form .actions button {
   padding: 10px;
   cursor: pointer;
 }
-main .content {
+.content {
   width: 520px;
   padding-left: 20px;
+}
+.lt-ie9 header,
+.lt-ie9 main {
+  display: block;
+}
+.lt-ie9 form {
+  width: 80%;
+  margin: 5% auto;
+  float: none;
+}
+.lt-ie9 .content {
+  width: 80%;
+  margin: 0 auto;
+  padding: none;
 }
 @media screen and (max-width: 790px) {
   main {
