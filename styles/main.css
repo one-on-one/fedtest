@@ -14,6 +14,7 @@ body > header h1 {
   margin: 0;
 }
 main {
+  display: block;
   width: 960px;
   margin: 0 auto;
   padding: 300px 0 0;
@@ -52,6 +53,7 @@ main form label {
   display: block;
   margin-bottom: .8em;
   color: #222222;
+  font-size: .9em;
 }
 main form label input {
   display: block;
@@ -61,6 +63,54 @@ main form label input {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+main form .education-levels {
+  background: #dddddd;
+  border: none;
+  padding: .5em 1.5em;
+  min-height: 40px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+}
+main form .education-levels legend {
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+main form .education-levels legend:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px;
+  border-color: #666666 transparent transparent transparent;
+  position: absolute;
+  top: 50%;
+  right: 2em;
+  margin-top: -3px;
+}
+main form .education-levels #edufields {
+  margin: 40px 0 0;
+}
+main form .education-levels label {
+  cursor: pointer;
+  margin: 3px 0;
+}
+main form .education-levels label input {
+  display: inline-block;
+  width: auto;
+  margin: 0 6px 0 0;
 }
 main form .actions button {
   width: 100%;

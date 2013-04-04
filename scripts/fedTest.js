@@ -1,12 +1,17 @@
+var edu = document.getElementById('edu'),
+	edufields = document.getElementById('edufields');
+
+// Hide the field container so we can toggle it later
+edufields.style.display = 'none';
+
 function getEduLevels(data) {
 
 	// Return array of JSONP call
 	var arr = [data];
 
-	for(var i=0;i<arr.length;i++) {
+	for(var i=0; i<arr.length; i++) {
 
-		var obj = arr[i],
-			parent = document.getElementById('edu');
+		var obj = arr[i];
 
 		for(var key in obj) {
 
@@ -20,14 +25,18 @@ function getEduLevels(data) {
 			rad.setAttribute('type', 'radio');
 
 			// Now give label the value and put the input inside it
-			label.setAttribute('class', 'inline');
 			label.innerHTML = obj[key];
-			label.appendChild(rad);
+			label.insertBefore(rad, label.firstChild);
 
 			// Finally, put the new label in the form parent
-			parent.appendChild(label);
+			edufields.appendChild(label);
 		}
 	}
+}
+
+edu.onclick = function() {
+	// Toggle the field container
+	edufields.style.display = (edufields.style.display != 'none' ? 'none' : '' );
 }
 
 // Education levels can change, let's pull them in with the API
