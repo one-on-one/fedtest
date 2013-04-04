@@ -16,6 +16,17 @@ body > header h1 {
 main {
   width: 960px;
   margin: 0 auto;
+  padding: 300px 0 0;
+  *zoom: 1;
+  background: transparent url(../images/banner.jpg) no-repeat;
+}
+main:before,
+main:after {
+  content: "";
+  display: table;
+}
+main:after {
+  clear: both;
 }
 main form {
   float: right;
