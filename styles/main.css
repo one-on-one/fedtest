@@ -164,14 +164,14 @@ form .actions button {
   padding: none;
 }
 @media screen and (max-width: 790px) {
-  main {
+  body main {
     padding-left: 5%;
     padding-right: 5%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
   }
-  main form {
+  body main form {
     float: none;
     width: 100%;
     box-sizing: border-box;
@@ -180,58 +180,58 @@ form .actions button {
     margin: -15% 0 1.5em;
     *zoom: 1;
   }
-  main form:before,
-  main form:after {
+  body main form:before,
+  body main form:after {
     content: "";
     display: table;
   }
-  main form:after {
+  body main form:after {
     clear: both;
   }
-  main form .f-fname,
-  main form .f-lname,
-  main form .education-levels,
-  main form .actions {
+  body main form .f-fname,
+  body main form .f-lname,
+  body main form .education-levels,
+  body main form .actions {
     width: 49%;
     float: left;
   }
-  main form .f-lname,
-  main form .actions {
+  body main form .f-lname,
+  body main form .actions {
     float: right;
   }
-  main form .education-levels {
+  body main form .education-levels {
     margin-top: 20px;
   }
-  main form .f-phone {
+  body main form .f-phone {
     clear: both;
   }
-  main .content {
+  body main .content {
     width: 100%;
     padding: 0;
   }
 }
 @media screen and (max-width: 660px) {
-  main form .education-levels legend:after {
+  body main form .education-levels legend:after {
     border-width: 4px;
     margin-top: -2px;
     right: 1em;
   }
 }
 @media screen and (max-width: 550px) {
-  main form .f-fname,
-  main form .f-lname,
-  main form .education-levels,
-  main form .actions {
+  body main form .f-fname,
+  body main form .f-lname,
+  body main form .education-levels,
+  body main form .actions {
     width: 100%;
     float: none;
   }
-  main form .education-levels {
+  body main form .education-levels {
     margin-top: 0;
   }
 }
 @media screen and (max-width: 350px) {
-  main form .education-levels,
-  main form .actions button {
+  body main form .education-levels,
+  body main form .actions button {
     font-size: .9em;
   }
 }
