@@ -100,17 +100,35 @@ main {
 			}
 		}
 
-		.actions button {
-			width: 100%;
-			.box-sizing;
-			background-color: #859901;
-			font-size: 16px;
-			font-weight: bold;
-			color: #fff;
-			border: none;
-			.border-radius(8px);
-			margin-top: 20px; padding: 10px;
-			cursor: pointer;
+		.actions {
+			.error {
+				ol {
+					margin: 1em 0 0; padding: 0;
+
+					li {
+						color: #ff5a20;
+						list-style-position: inside;
+						padding: .7em 0;
+						font-weight: bold;
+						border-top: 1px dotted lighten(#ff5a20, 20%);
+
+						&:first-child { border-top: none }
+					}
+				}
+			}
+
+			button {
+				width: 100%;
+				.box-sizing;
+				background-color: #859901;
+				font-size: 16px;
+				font-weight: bold;
+				color: #fff;
+				border: none;
+				.border-radius(8px);
+				margin-top: 20px; padding: 10px;
+				cursor: pointer;
+			}
 		}
 	}
 

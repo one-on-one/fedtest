@@ -12,17 +12,18 @@
 		<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
 	</header>
 	<main>
-		<form method="post" action="index.html">
+		<form method="post" action="index.html" onsubmit="return validate(this)" novalidate="novalidate">
 			<h2>Nibh Hendrerit Sodales</h2>
-			<label class="f-fname">First Name: <input type="text" name="first_name" required="required"/></label>
-			<label class="f-lname">Last Name: <input type="text" name="last_name" required="required"/></label>
-			<label class="f-phone">Phone Number: <input type="tel" name="phone" required="required" placeholder="eg: (555) 555-5555"/></label>
-			<label class="f-email">Email Address: <input type="email" name="email" required="required"/></label>
+			<label class="f-fname">First Name: <input type="text" name="first_name" required="required" data-required-message="Please enter your first name."/></label>
+			<label class="f-lname">Last Name: <input type="text" name="last_name" required="required" data-required-message="Please enter your last name."/></label>
+			<label class="f-phone">Phone Number: <input type="tel" name="phone" required="required" placeholder="eg: (555) 555-5555" data-required-message="Please enter your phone number."/></label>
+			<label class="f-email">Email Address: <input type="email" name="email" required="required" data-required-message="Please enter your email address."/></label>
 			<fieldset id="edu" class="education-levels">
 				<legend>Current Education Level</legend>
 				<div id="edufields"></div>
 			</fieldset>
 			<div class="actions">
+				<div id="messages" class="error"></div>
 				<button type="submit">Request Information</button>
 			</div>
 		</form>
