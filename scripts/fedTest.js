@@ -19,10 +19,11 @@ function getEduLevels(data) {
 			var label = document.createElement('label'),
 				rad = document.createElement('input');
 
-			// Make the new input type radio, and give it the key value
+			// Make the new input type radio, make it required, and give it the key value
 			rad.setAttribute('value', key);
 			rad.setAttribute('name', 'education-level');
 			rad.setAttribute('type', 'radio');
+			rad.setAttribute('required', 'required');
 
 			// Now give label the value and put the input inside it
 			label.innerHTML = obj[key];

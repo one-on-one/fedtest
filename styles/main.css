@@ -149,7 +149,7 @@ main .content {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    margin: -15% 0 0;
+    margin: -15% 0 1.5em;
     *zoom: 1;
   }
   main form:before,
