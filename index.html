@@ -2,8 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" href="styles/main.css" />
+
+  <!--[if lt IE 9]>
+  <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
+    <script>
+    // Using jquery to get data for radio buttons
+    $(document).ready(function() {
+          var url =  "http://fedtest.aws.af.cm/";
+          $.getJSON(url + "?callback=?", null, function(data) {
+              $.each(data, function(key, val) {
+                $('<input type="radio" name="education" value="' + key + '">' + val + "<br />").appendTo('#education');
+              });
+          });
+          
+      });
+    </script>
+
   </head>
   <body>
     <div class="header">
@@ -11,7 +33,7 @@
     </div>
     <div class="container">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
+      <form id="my_form" method="post" action="index.html">
         <h2>Nibh Hendrerit Sodales</h2>
         <label>
           First Name:
@@ -22,13 +44,17 @@
           <input type="text" name="last_name" />
         </label>
         <label>
-          Phone Number:
+          Phone Number: <span class="form-helper">(1234567890)</span>
           <input type="text" name="phone" />
         </label>
         <label>
-          Email Address:
-          <input type="text" name="email" />
+          Email Address: <span class="form-helper">(example@email.com)</span>
+          <input type="email" name="email" />
         </label>
+        <label id="education">
+          Current Education Level:<br />
+        </label>
+        <label for="education" class="error" generated="true"></label>
         <div class="actions">
           <button type="submit">Request Information</button>
         </div>
@@ -47,5 +73,31 @@
         </p>
       </div>
     </div>
+
+    <script>
+    // jquery form validation plugin
+          jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+              phone_number = phone_number.replace(/\s+/g, ""); 
+            return this.optional(element) || phone_number.length > 9 &&
+              phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+          }, "Please enter a valid phone number");
+
+          $("#my_form").validate({
+            rules: {
+              first_name  : "required",
+              last_name   : "required",
+              phone       : {required : true, phoneUS: true},
+              email       : {required : true, email: true},
+              education   : "required"
+            },
+            messages: {
+              first_name  : {required: "Please enter your first name"},
+              last_name  : {required: "Please enter your last name"},
+              phone  : {required: "Please enter a valid phone number"},
+              email  : {required: "Please enter a valid email address"},
+              education  : {required: "Please select an education level"}
+            }
+          });
+    </script>
   </body>
 </html>
