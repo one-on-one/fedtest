@@ -4,6 +4,21 @@
     <meta charset="utf-8" />
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <script>
+    // Using jquery to get data for radio buttons
+    $(document).ready(function() {
+          var url =  "http://fedtest.aws.af.cm/";
+          $.getJSON(url + "?callback=?", null, function(data) {
+              $.each(data, function(key, val) {
+                $('<input type="radio" name="education" value="' + key + '">' + val + "<br />").appendTo('#education');
+              });
+          });
+      });
+    </script>
+
   </head>
   <body>
     <div class="header">
@@ -28,6 +43,9 @@
         <label>
           Email Address:
           <input type="text" name="email" />
+        </label>
+        <label id="education">
+          Current Education Level:<br />
         </label>
         <div class="actions">
           <button type="submit">Request Information</button>
