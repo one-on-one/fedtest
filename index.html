@@ -13,7 +13,7 @@
           var url =  "http://fedtest.aws.af.cm/";
           $.getJSON(url + "?callback=?", null, function(data) {
               $.each(data, function(key, val) {
-                $('<input type="radio" name="education" value="' + key + '">' + val + "<br />").appendTo('#education');
+                $('<input type="radio" name="education" value="' + key + '" required>' + val + "<br />").appendTo('#education');
               });
           });
       });
@@ -30,19 +30,19 @@
         <h2>Nibh Hendrerit Sodales</h2>
         <label>
           First Name:
-          <input type="text" name="first_name" />
+          <input type="text" name="first_name" required />
         </label>
         <label>
           Last Name:
-          <input type="text" name="last_name" />
+          <input type="text" name="last_name" required />
         </label>
         <label>
-          Phone Number:
-          <input type="text" name="phone" />
+          Phone Number: <span class="form-helper">(1234567890)</span>
+          <input type="text" pattern="[0-9]{10}" name="phone" required />
         </label>
         <label>
-          Email Address:
-          <input type="text" name="email" />
+          Email Address: <span class="form-helper">(example@email.com)</span>
+          <input type="email" name="email" required />
         </label>
         <label id="education">
           Current Education Level:<br />
