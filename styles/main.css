@@ -31,10 +31,11 @@ form {
   position: relative;
   border: 1px solid #839496;
   box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
+  -moz-box-shadow:    4px 4px 0 rgba(90,90, 90, .4);
+  -webkit-box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
 }
 
 h2 {
-  margin: 0;
   padding: 20px 29px;
   margin: -29px -29px 20px;
   text-align: center;
@@ -61,12 +62,16 @@ input[type="text"], input[type="email"] {
   padding: 5px;
   border: 1px solid #93a1a1;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
 }
 
 .actions button {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   background-color: #859901;
   font-size: 16px;
   font-weight: bold;
@@ -80,4 +85,51 @@ input[type="text"], input[type="email"] {
 .content {
   width: 520px;
   padding-left: 20px;
+}
+
+@media screen and (max-width: 700px) {
+
+  .header {
+    padding:20px 0;
+  }
+
+  .container {
+    width:100%;
+    overflow:hidden;
+  }
+
+  form {
+    float:none;
+    margin:-280px auto 0;
+  }
+
+  .content {
+    width:90%;
+    padding:0 20px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .header {
+    padding:15px 0;
+  }
+
+  .container {
+    width:100%;
+    overflow:hidden;
+  }
+
+  form {
+    float:none;
+    margin:-310px auto 0;
+    width:80%;
+  }
+
+  .content {
+    width:90%;
+    padding:0 20px;
+  }
+
 }
