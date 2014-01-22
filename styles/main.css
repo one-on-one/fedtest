@@ -45,7 +45,7 @@ h2 {
 label {
   display: block;
   margin-bottom: .8em;
-  color #222;
+  color: #222;
 }
 
 input {
@@ -74,4 +74,20 @@ input {
   width: 520px;
   padding-left: 20px;
 }
+
+/*jkay additions*/
+.education_level{
+	min-height:200px;	
+}
+
+
+
+
+
+
+
+
+
+
+
 
