@@ -110,6 +110,10 @@ input[type=radio]{
 	float:left;
 	width: 50%;
 }
+span.phone_desc{
+	font-size:10px;
+	font-style:italic;
+}
 .clear{
 	clear: both;
 }
