@@ -79,6 +79,40 @@ input {
 .education_level{
 	min-height:200px;	
 }
+.error_header {
+	background-color: #800020;
+	font-weight: bold;
+	display:none;
+	padding-top: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	position: fixed;
+	width: 100%;
+	height: 62px;
+	top: -102px;
+	z-index: 5;
+}
+.content {
+  width: 520px;
+  padding-left: 20px;
+}
+
+.education_level{
+	min-height:200px;	
+}
+input[type=radio]{
+	float:left;
+	width:7%;
+	margin-top: 5px;
+}
+.edu_holder{
+	float:left;
+	width: 50%;
+}
+.clear{
+	clear: both;
+}
 
 
 
