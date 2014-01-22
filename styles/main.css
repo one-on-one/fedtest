@@ -117,15 +117,33 @@ span.phone_desc{
 .clear{
 	clear: both;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width: 640px) {
+	h1{
+		line-height: 28px;
+	}
+	img.banner{
+		width: 100%;
+	}
+	.container {
+		width: 300px;
+		margin: 0 auto;
+	}
+	form{
+		width: 238px;
+		margin:0;
+		float: left;
+		box-shadow:none;
+	}
+	.edu_holder {
+		width: 88%;
+	}
+	.error_header {
+		padding: 20px 0 40px 0;
+	}
+	.content {
+		width: 100%;
+		padding: 10px 0px;
+		float: left;
+		text-align: justify;
+	}
+}
