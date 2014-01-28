@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Front-End Developer Test</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script type="text/script" src="script/script.js"></script>
   </head>
   <body>
     <div class="header">
@@ -29,6 +30,17 @@
           Email Address:
           <input type="text" name="email" />
         </label>
+        <!-- add in education level with radio buttons. Phase 2 - get request for dynamically changing data to populate fields-->
+        <label>
+          Current Education Level:
+        </label>
+         <div id='edu-list'>
+          <input type="radio" name="education_level" required="" value="High School Diploma">High School Diploma<br>
+          <input type="radio" name="education_level" value="Associate Degree">Associate Degree<br>
+          <input class="edu-list" type="radio" name="education_level" value="Bachelor Degree">Bachelor Degree<br>
+          <input class="edu-list" type="radio" name="education_level" value="Master Degree">Master Degree<br>
+          <input class="edu-list" type="radio" name="education_level" value="Doctoral Degree">Doctoral Degree<br>
+         </div>
         <div class="actions">
           <button type="submit">Request Information</button>
         </div>
@@ -48,4 +60,5 @@
       </div>
     </div>
   </body>
+  <script src='http://code.jquery.com/jquery-1.10.2.js' type='text/javascript'></script>
 </html>

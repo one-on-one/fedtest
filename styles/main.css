@@ -27,25 +27,26 @@ form {
   width: 300px;
   padding: 30px;
   margin: -280px 20px 0;
-  background-color: #fff;
+  background-color: rgba(255,255,255, .8);
   position: relative;
   border: 1px solid #839496;
   box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
 }
+/*added a slight opacity to the form for style and to make the picture behind it more visible*/
 
 h2 {
   margin: 0;
   padding: 20px 29px;
   margin: -29px -29px 20px;
   text-align: center;
-  background-color: #ddd;
+  background-color: rgba(221,221,221, .8);
   color: #586e75;
 }
 
 label {
   display: block;
   margin-bottom: .8em;
-  color #222;
+  color: #333333;
 }
 
 input {
@@ -75,3 +76,16 @@ input {
   padding-left: 20px;
 }
 
+.edu-list{
+        min-height:200px;        
+}
+
+input[type=radio]{
+        float:left;
+        width:7%;
+        margin-top: 5px;
+}
+
+.clear{
+        clear: both;
+}
