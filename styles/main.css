@@ -89,3 +89,5 @@ input[type=radio]{
 .clear{
         clear: both;
 }
+
+/*Add media queries to handle screen re-sizing*/

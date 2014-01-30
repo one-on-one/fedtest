@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    <script type="text/script" src="script/script.js"></script>
+    <script src='http://code.jquery.com/jquery-1.10.2.js' type='text/javascript'></script>
+    <script type="text/javascript" src="script/script.js"></script>
   </head>
   <body>
     <div class="header">
@@ -12,41 +13,41 @@
     </div>
     <div class="container">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
+      <form name="signUp" id="signUp" method="post" action="index.html">
         <h2>Nibh Hendrerit Sodales</h2>
         <label>
           First Name:
-          <input type="text" name="first_name" />
+          <input type="text" name="first_name" required=""/>
         </label>
         <label>
           Last Name:
-          <input type="text" name="last_name" />
+          <input type="text" name="last_name" required=""/>
         </label>
         <label>
           Phone Number:
-          <input type="text" name="phone" />
+          <input class="phone" type="text" name="phone" required="" placeholder="ex. (888)888-8888"/>
         </label>
         <label>
           Email Address:
-          <input type="text" name="email" />
+          <input class="email" type="text" name="email" required=""/>
         </label>
-        <!-- add in education level with radio buttons. Phase 2 - get request for dynamically changing data to populate fields-->
+        <!-- add in education level with radio buttons. Phase 2 - create function with getJSON request for dynamically changing data to populate fields-->
         <label>
           Current Education Level:
         </label>
          <div id='edu-list'>
-          <input type="radio" name="education_level" required="" value="High School Diploma">High School Diploma<br>
-          <input type="radio" name="education_level" value="Associate Degree">Associate Degree<br>
-          <input class="edu-list" type="radio" name="education_level" value="Bachelor Degree">Bachelor Degree<br>
-          <input class="edu-list" type="radio" name="education_level" value="Master Degree">Master Degree<br>
-          <input class="edu-list" type="radio" name="education_level" value="Doctoral Degree">Doctoral Degree<br>
+          <!-- <input type="radio" name="education_level" required="" value="High School Diploma">High School Diploma<br>
+          <input type="radio" name="education_level" required="" value="Associate Degree">Associate Degree<br>
+          <input type="radio" name="education_level" required="" value="Bachelor Degree">Bachelor Degree<br>
+          <input type="radio" name="education_level" required="" value="Master Degree">Master Degree<br>
+          <input type="radio" name="education_level" required="" value="Doctoral Degree">Doctoral Degree<br> -->
          </div>
         <div class="actions">
           <button type="submit">Request Information</button>
         </div>
       </form>
       <div class="content">
-        <!-- Replaced Lorem Ipsum with Hipster Ipsum, because its funny -->
+        <!-- Replaced Lorem Ipsum with Hipster Ipsum, because its funny and different-->
         <p>
           Raw denim fap Echo Park, distillery Williamsburg irony Pinterest Bushwick wayfarers umami Pitchfork Odd Future leggings blog. Hoodie messenger bag gastropub freegan chia, single-origin coffee cardigan pork belly put a bird on it try-hard YOLO ennui bespoke keytar. Pop-up cray banjo drinking vinegar, disrupt salvia gluten-free. Williamsburg Brooklyn vinyl, dreamcatcher keffiyeh street art distillery. Intelligentsia Austin umami next level seitan, Truffaut Wes Anderson. 
         </p>
@@ -56,5 +57,4 @@
       </div>
     </div>
   </body>
-  <script src='http://code.jquery.com/jquery-1.10.2.js' type='text/javascript'></script>
 </html>
