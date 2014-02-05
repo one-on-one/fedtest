@@ -12,7 +12,7 @@
     </div>
     <div class="container">
       <img class="banner" src="images/banner.jpg" alt="banner" />
-      <form method="post" action="index.html">
+      <form method="post" action="index.html" id="myForm">
         <h2>Nibh Hendrerit Sodales</h2>
         <label>
           First Name:
@@ -55,7 +55,7 @@
         </div>
 
         <div class="actions">
-          <button type="submit">Request Information</button>
+          <button type="submit" for="myForm" onclick="calcFields()">Request Information</button>
         </div>
       </form>
       <div class="content">
