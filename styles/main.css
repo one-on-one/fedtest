@@ -75,3 +75,18 @@ input {
   padding-left: 20px;
 }
 
+@media screen and (min-width: 960px) {
+  /* Desktop Layout */
+
+
+}
+
+@media screen and (min-width: 720px) and (max-width: 960px) {
+  /* Tablet Layout */
+
+}
+
+@media screen and (max-width: 720px) {
+  /* Mobile Layout */
+  
+}
