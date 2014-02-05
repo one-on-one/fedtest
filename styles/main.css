@@ -28,7 +28,7 @@ h2 {
 label {
   display: block;
   margin-bottom: .8em;
-  color #222;
+  color: #222;
 }
 
 input[type=text] {
