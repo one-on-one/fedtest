@@ -15,4 +15,16 @@ function calcFields() {
 	var bachelor    = document.getElementById("bachelor");
 	var master      = document.getElementById("master");
 	var doctoral    = document.getElementById("doctoral");
+
+	/* Elemet's values */
+	var first_name_value = first_name.value;
+	var last_name_value  = last_name.value;
+	var phone_value      = phone.value;
+	var email_value      = email.value;
+
+	var high_school_value = high_school.value;
+	var associate_value   = associate.value;
+	var bachelor_value    = bachelor.value;
+	var master_value      = master.value;
+	var doctoral_value    = doctoral.value;
 }
