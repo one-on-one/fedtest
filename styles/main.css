@@ -92,6 +92,14 @@ input[type=radio] {
 @media screen and (min-width: 720px) and (max-width: 960px) {
   /* Tablet Layout */
 
+  .container {
+    width: 720px;
+    margin: 0 quto;
+  }
+
+  .container > .banner {
+    width: 720px;
+  }
 }
 
 @media screen and (max-width: 720px) {
