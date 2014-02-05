@@ -48,4 +48,10 @@ function calcFields() {
 		alert("Please enter a valid email address");
 		return false;
 	}
+
+	/* Validation Statement for Current Education */
+	if (!(high_school.checked || associate.checked || bachelor.checked || master.checked || doctoral.checked)) {
+		alert("Plese select you current education.");
+		return false
+	}
 }
