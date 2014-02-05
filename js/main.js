@@ -27,4 +27,10 @@ function calcFields() {
 	var bachelor_value    = bachelor.value;
 	var master_value      = master.value;
 	var doctoral_value    = doctoral.value;
+	
+	/* Validation statements for names, phone numbers and email */
+	if ( first_name_value == null || first_name_value == "" || !(name_cr.test(first_name_value)) ) {
+		alert("Please enter a valid first name.");
+		return false;
+	}
 }
