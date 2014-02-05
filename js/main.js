@@ -38,4 +38,14 @@ function calcFields() {
 		alert("Please enter a valid last name.");
 		return false;
 	}
+
+	if ( phone == null || phone == "" || !(phone_cr.test(phone_value)) ) {
+		alert("Phone format: (###) ###-####");
+		return false;
+	}
+
+	if ( email == null || email == "" || !(email_cr.test(email_value)) ) {
+		alert("Please enter a valid email address");
+		return false;
+	}
 }
