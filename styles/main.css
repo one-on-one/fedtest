@@ -94,7 +94,7 @@ input[type=radio] {
 
   .container {
     width: 720px;
-    margin: 0 quto;
+    margin: 0 auto;
   }
 
   .container > .banner {
