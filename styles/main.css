@@ -1,6 +1,6 @@
  body {
   font: normal 14px/1.6em sans-serif;
-  background: #eee url(../images/bg.png);
+  background: #eee url(../images/bg.png) top left repeat;
   color: #666;
   margin: 0;
 }
