@@ -54,4 +54,6 @@ function calcFields() {
 		alert("Plese select you current education.");
 		return false
 	}
+
+	return true;
 }
