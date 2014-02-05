@@ -45,6 +45,10 @@ input[type=radio] {
   padding: 5px;
 }
 
+.myLabel {
+  color: #222;
+}
+
 .myLabel > label {
   margin-left: 15px;
   margin-bottom: 0px;
