@@ -45,6 +45,11 @@ input[type=radio] {
   padding: 5px;
 }
 
+.myLabel > label {
+  margin-left: 15px;
+  margin-bottom: 0px;
+}
+
 .actions button {
   width: 100%;
   padding: 10px;
