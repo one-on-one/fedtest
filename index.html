@@ -30,18 +30,8 @@
           Email Address:
           <input type="text" name="email" />
         </label>
-        <label class="radio inline">
-          Current Education Level:
-                <input type="radio" name="High_School_Diploma" value="High School Diploma"/>
-                High School Diploma
-                <input type="radio" name="Associate_Degree" value="Associate Degree"/>
-                Associate Degree
-                <input type="radio" name="Bachelor_Degree" value="Bachelor Degree"/>
-                Bachelor Degree
-                <input type="radio" name="Master_Degree" value="Master Degree"/>
-                Master Degree
-                <input type="radio" name="Doctoral_Degree" value="Doctoral Degree"/>
-                Doctoral Degree
+        <label id="ed" class="radio inline">
+          Current Education Level:<br/>
         </label>
         <div class="actions">
           <button type="submit">Request Information</button>
@@ -64,5 +54,20 @@
 
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>//adds radio buttons from jsonp data
+      $(document).ready(function(){
+        $.ajax({
+          url: 'http://fedtest.aws.af.cm/',
+          dataType: 'jsonp',
+          success: function(dataFromJsonp){
+            edObject = dataFromJsonp;
+            $.each( edObject, function( key, value ) {
+                $('#ed').append('<input type="radio" name="'+value+'" value="'+key+'"/>'+value+'<br/>');
+            });
+          }
+        });
+      })
+    </script>
   </body>
 </html>
