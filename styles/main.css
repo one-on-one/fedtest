@@ -1,6 +1,6 @@
  body {
   font: normal 14px/1.6em sans-serif;
-  background: #eee url(../images/bg.png);
+  background: #eee url(../images/bg.png) top left repeat;
   color: #666;
   margin: 0;
 }
@@ -15,23 +15,6 @@
 h1 {
   margin: 0;
 }
-  
-
-.container {
-  width: 960px;
-  margin: 0 auto;
-}
-
-form {
-  float: right;
-  width: 300px;
-  padding: 30px;
-  margin: -280px 20px 0;
-  background-color: #fff;
-  position: relative;
-  border: 1px solid #839496;
-  box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
-}
 
 h2 {
   margin: 0;
@@ -45,15 +28,30 @@ h2 {
 label {
   display: block;
   margin-bottom: .8em;
-  color #222;
+  color: #222;
 }
 
-input {
+input[type=text] {
   display: block;
   width: 100%;
   padding: 5px;
   border: 1px solid #93a1a1;
   box-sizing: border-box;
+}
+
+input[type=radio] {
+  display: inline;
+  width: inherit;
+  padding: 5px;
+}
+
+.myLabel {
+  color: #222;
+}
+
+.myLabel > label {
+  margin-left: 15px;
+  margin-bottom: 0px;
 }
 
 .actions button {
@@ -70,8 +68,87 @@ input {
   cursor: pointer;
 }
 
-.content {
-  width: 520px;
-  padding-left: 20px;
+@media screen and (min-width: 960px) {
+  /* Desktop Layout */
+
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  form {
+    float: right;
+    width: 300px;
+    padding: 30px;
+    margin: -280px 20px 0;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #839496;
+    box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
+  }
+
+  .content {
+    width: 520px;
+    padding-left: 20px;
+  }
 }
 
+@media screen and (min-width: 720px) and (max-width: 960px) {
+  /* Tablet Layout */
+
+  .container {
+    width: 720px;
+    margin: 0 auto;
+  }
+
+  .container > .banner {
+    width: 720px;
+  }
+
+  form {
+    float: right;
+    width: 300px;
+    padding: 30px;
+    margin: -180px 20px 0;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #839496;
+    box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
+  }
+
+  .content {
+    width: 320px;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  /* Mobile Layout */
+
+  .container {
+    width: 405px;
+    margin: 0 auto;
+  }
+
+  .container > .banner {
+    width: 0;
+    content: none;
+  }
+
+  form {
+    float: none;
+    width: 300px;
+    padding: 30px;
+    margin: 0 20px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid #839496;
+    box-shadow: 4px 4px 0 rgba(90,90,90,.4);
+  }
+
+  .content {
+    width: 345px;
+    padding: 0 30px;
+    text-align: justify;
+  }
+}
