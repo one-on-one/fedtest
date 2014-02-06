@@ -3,47 +3,58 @@
   <head>
     <meta charset="utf-8" />
     <title>Front-End Developer Test</title>
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <script src='http://code.jquery.com/jquery-1.10.2.js' type='text/javascript'></script>
+    <script type="text/javascript" src="script/script.js"></script>
   </head>
   <body>
     <div class="header">
-      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+      <h1>Quinoa do vegan pour-over, keffiyeh Vice 8-bit nisi irony.</h1>
     </div>
     <div class="container">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
+      <form name="signUp" id="signUp" method="post" action="index.html">
         <h2>Nibh Hendrerit Sodales</h2>
         <label>
           First Name:
-          <input type="text" name="first_name" />
+          <input type="text" name="first_name" required=""/>
         </label>
         <label>
           Last Name:
-          <input type="text" name="last_name" />
+          <input type="text" name="last_name" required=""/>
         </label>
         <label>
           Phone Number:
-          <input type="text" name="phone" />
+          <input class="phone" type="text" name="phone" required="" placeholder="ex. (888) 888-8888"/>
         </label>
         <label>
           Email Address:
-          <input type="text" name="email" />
+          <input class="email" type="text" name="email" required=""/>
         </label>
+        
+        <label>
+          Current Education Level:
+        </label>
+         <div id='edu-list'>
+          <!-- create function with getJSON request for dynamically changing data to populate fields-->
+          
+          <!-- <input type="radio" name="education_level" required="" value="High School Diploma">High School Diploma<br>
+          <input type="radio" name="education_level" required="" value="Associate Degree">Associate Degree<br>
+          <input type="radio" name="education_level" required="" value="Bachelor Degree">Bachelor Degree<br>
+          <input type="radio" name="education_level" required="" value="Master Degree">Master Degree<br>
+          <input type="radio" name="education_level" required="" value="Doctoral Degree">Doctoral Degree<br> -->
+         </div>
         <div class="actions">
           <button type="submit">Request Information</button>
         </div>
       </form>
       <div class="content">
+        <!-- Replaced Lorem Ipsum with Hipster Ipsum, because its funny and different-->
         <p>
-          Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. 
-          Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis 
-          pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo 
-          sapien, faucibus eu aliquet et, molestie quis orci.
+          Raw denim fap Echo Park, distillery Williamsburg irony Pinterest Bushwick wayfarers umami Pitchfork Odd Future leggings blog. Hoodie messenger bag gastropub freegan chia, single-origin coffee cardigan pork belly put a bird on it try-hard YOLO ennui bespoke keytar. Pop-up cray banjo drinking vinegar, disrupt salvia gluten-free. Williamsburg Brooklyn vinyl, dreamcatcher keffiyeh street art distillery. Intelligentsia Austin umami next level seitan, Truffaut Wes Anderson. 
         </p>
         <p>
-          Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae 
-          lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget 
-          semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.
+          Gastropub salvia Blue Bottle 3 wolf moon Marfa, leggings retro keytar High Life umami flexitarian vegan gentrify. Chambray Helvetica umami leggings Blue Bottle meh. Polaroid Tonx Etsy next level, master cleanse deep v fingerstache tote bag Truffaut synth High Life yr flannel 8-bit PBR&B. Literally fashion axe Echo Park Marfa. Marfa YOLO direct trade blog. 
         </p>
       </div>
     </div>
