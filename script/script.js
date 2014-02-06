@@ -38,39 +38,4 @@ $(document).ready(function() {
                 }
     });
 
-
-//basic form validation completed via html - below is what I was working on as a js solution - incomplete	
-	// function validateForm()
-	// {
-	// var first_name = document.forms["signUp"]["first_name"].value;
-	// if (first_name==null || first_name=="")
-	//   {
-	//   alert("First name must be filled out");
-	//   return false;
-	//   }
-	
-	// var last_name = document.forms["signUp"]["last_name"].value;
-	// if (last_name==null || last_name=="")
-	//   {
-	//   alert("Last name must be filled out");
-	//   return false;
-	//   }  
-	// }
-
-	// var inputtxt = $('.phone').val();
-
-	// function validatePhone(inputtxt){
-	// 	var regPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-	// 	if((inputtxt.value.match(regPhone)){
-	// 		return true;
-	// 	}
-	// 	else{
-	// 		alert("Please enter a valid phone number");
-	// 		return false;
-	// 		}
-	// }
-
-
-
-
 });
