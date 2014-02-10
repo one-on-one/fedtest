@@ -56,6 +56,19 @@ input {
   box-sizing: border-box;
 }
 
+.error > input, .error > div{
+     border: 1px solid #FF0000 !important;
+}
+
+.error:before {
+    content: attr(title);
+    position: absolute;
+    right: 20px; 
+    color: #FF0000;
+    font-size: 9px;
+}
+
+
 .actions button {
   width: 100%;
   padding: 10px;
@@ -74,4 +87,24 @@ input {
   width: 520px;
   padding-left: 20px;
 }
+
+@media only screen 
+and (max-width : 960px) {
+	
+	.container { width: 100%;}
+	.container img{width: 100%;}
+	form{margin-top: -29%;}
+	.content { width: 50%;}
+}
+
+@media only screen 
+and (max-width : 480px) { 
+	
+	body{min-width: 320px; min-height: 480px;}
+	h1{ font-size: 14pt; }
+	form{float: none; margin: -29% auto; width: 250px;}
+	.content {width: 90%; padding: 30% 10px; margin: 0 auto;}
+	.content p{width: 100%;}
+}
+
 
