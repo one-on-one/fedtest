@@ -11,32 +11,30 @@
     </div>
     <div class="container">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
+      <form method="post" onsubmit="return beforeSubmit()" action="index.html">
         <h2>Nibh Hendrerit Sodales</h2>
-       <label class="validate" title="Please enter your first name">
+       <label id="fnameError" class="validate" title="Please enter your first name">
           First Name:
-          <input type="text" name="first_name" />
+          <input id="fname" type="text" name="first-name" onblur="validate('fname')" />
         </label>
-        <label class="validate" title="Please enter your last name">
+        <label id="lnameError" class="validate" title="Please enter your last name">
           Last Name:
-          <input type="text" name="last_name" />
+          <input id="lname" type="text" name="last-name" onblur="validate('lname')" />
         </label>
-        <label class="validate" title="Please enter a valid phone humber">
+        <label id="phoneError" class="validate" title="Please enter a valid phone humber">
           Phone Number:
-          <input type="text" name="phone" />
+          <input id="phone" type="text" name="phone" onblur="validate('phone')" />
         </label>
-        <label class="validate" title="Please enter a valid email address">
+        <label id="emailError" class="validate" title="Please enter a valid email address">
           Email Address:
-          <input type="text" name="email" />
+          <input id="email" type="text" name="email" onblur="validate('email')" />
         </label>
-         <div>
-          	<label class="validate" title="Please enter a valid email address">
-          	  Education Level:
-	          	<div id="education">
+        <label id="radioError" class="validate" title="Please enter a valid email address">
+          Education Level:
+	        <div id="education">
 	          		
-	          	</div>	
-          	</label>
-        </div>
+	        </div>	
+        </label>
         <div class="actions">
           <button type="submit">Request Information</button>
         </div>
