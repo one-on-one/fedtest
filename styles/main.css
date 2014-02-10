@@ -56,6 +56,19 @@ input {
   box-sizing: border-box;
 }
 
+input[type=radio]{
+    width: 0;
+    float: left;  
+}
+
+#education{
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #93a1a1;
+  box-sizing: border-box;   
+}
+
 .error > input, .error > div{
      border: 1px solid #FF0000 !important;
 }
