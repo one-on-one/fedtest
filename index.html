@@ -2,42 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link href="styles/bootstrap.min.css" media="screen" rel="stylesheet" />
+
+
+
+<style>
+.block { display: block; }
+form.cmxform label.error { display: none; }
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+</style>
+
+
   </head>
   <body>
+  <div class="container-full">
     <div class="header">
       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
     </div>
-    <div class="container">
+    <div class="row">
+      <div class="col-xs-8">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
-        <h2>Nibh Hendrerit Sodales</h2>
-        <label>
-          First Name:
-          <input type="text" name="first_name" />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="last_name" />
-        </label>
-        <label>
-          Phone Number:
-          <input type="text" name="phone" />
-        </label>
-        <label>
-          Email Address:
-          <input type="text" name="email" />
-        </label>
-        <label id="ed" class="radio inline">
-          Current Education Level:<br/>
-        </label>
-        <div class="actions">
-          <button type="submit">Request Information</button>
-        </div>
-      </form>
+      
+
+    
+      
+
       <div class="content">
+        
         <p>
           Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. 
           Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis 
@@ -49,13 +46,59 @@
           lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget 
           semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.
         </p>
-      </div>
-    </div>
 
+        
+      </div>
+    </div><!--end col-->
+    <div class="col-xs-4">
+          <form class="cmxform" method="post" action="test3.html" id="myForm">
+        <h2>Nibh Hendrerit Sodales</h2>
+        <label>
+          First Name:
+          <input type="text" name="firstname" required="required" />
+        </label>
+        <label>
+          Last Name:
+          <input type="text" name="lastname" required="required" />
+        </label>
+        <label>
+          Phone Number:
+          <input type="text" name="phone" required="required"/>
+        </label>
+        <label>
+          Email Address:
+          <input type="text" name="email" />
+        </label>
+        
+        <fieldset id="ed" name="ed">
+          <legend>Current Education Level:<br/></legend>
+          
+        </fieldset>
+        
+        <div class="actions">
+          <button type="submit">Request Information</button>
+        </div>
+      </form>
+
+    </div>
+    </div><!--end row-->
+  </div><!--end container-->
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/additional-methods.min.js"></script>    
 
-    <script>//adds radio buttons from jsonp data
+   
+    <script>
+
+        $.validator.setDefaults({
+  submitHandler: function() {
+    alert("submitted!");
+  }
+});
+
+
+
       $(document).ready(function(){
         $.ajax({
           url: 'http://fedtest.aws.af.cm/',
@@ -63,8 +106,11 @@
           success: function(dataFromJsonp){
             edObject = dataFromJsonp;
             $.each( edObject, function( key, value ) {
-                $('#ed').append('<input type="radio" name="'+value+'" value="'+key+'"/>'+value+'<br/>');
+                $('#ed legend').append('<label for="'+key+'"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"/>'+value+'</label>');
+
+
             });
+            $('#ed input').first().attr("required", "required");
           },
           error: function(request,error) 
           {
@@ -79,11 +125,51 @@
            edObjectStatic = dataFromStatic;
             $.each( edObjectStatic, function( key, value ) {
                 $('#ed legend').append('<label for="'+key+'"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"/>'+value+'</label>');
+
+
             });
             $('#ed input').first().attr("required", "required");
           }
         });
-      })
+        
+       $("#myForm").validate({
+
+             rules: {
+              first_name: {required: true},
+              last_name: {required: true},
+              phone: {required: true,
+                      phoneUS: true},
+              email: {
+                required: true,
+                email: true
+              },
+              ed: {
+                required:true
+              }
+              
+            } 
+
+         });
+        
+      });//end document ready
+
     </script>
+
+
+
+
+
+    
+
+
+
+
+ 
+
   </body>
 </html>
+
+
+
+
+
