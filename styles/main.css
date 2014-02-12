@@ -15,7 +15,13 @@
 h1 {
   margin: 0;
 }
-  
+
+
+/*-------Form Validation Elements--------*/  
+.block { display: block; }
+form.cmxform label.error { display: none; }
+.container-full {margin: 0 auto;width: 100%;} 
+/*-------Form Validation Elements--------*/ 
 
 .container {
   width: 960px;
