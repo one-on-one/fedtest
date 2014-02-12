@@ -65,6 +65,22 @@
             $.each( edObject, function( key, value ) {
                 $('#ed').append('<input type="radio" name="'+value+'" value="'+key+'"/>'+value+'<br/>');
             });
+          },
+          error: function(request,error) 
+          {
+           dataFromStatic = {
+              "high": "High School Diploma #2",
+              "some": "Some College #2",
+              "asso": "Associate Degree #2",
+              "bach": "Bachelor Degree #2",
+              "mast": "Master Degree #2",
+              "doct": "Doctoral Degree #2"
+            },
+           edObjectStatic = dataFromStatic;
+            $.each( edObjectStatic, function( key, value ) {
+                $('#ed legend').append('<label for="'+key+'"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"/>'+value+'</label>');
+            });
+            $('#ed input').first().attr("required", "required");
           }
         });
       })
