@@ -15,7 +15,7 @@
 h1 {
   margin: 0;
 }
-  
+
 
 .container {
   width: 960px;
@@ -48,12 +48,22 @@ label {
   color #222;
 }
 
-input {
+.input {
   display: block;
   width: 100%;
   padding: 5px;
   border: 1px solid #93a1a1;
   box-sizing: border-box;
+}
+
+.input-radio-option {
+  cursor: pointer;
+}
+
+.input-radio {
+  width: auto;
+  float: left;
+  margin-right: 10px;
 }
 
 .actions button {
