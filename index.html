@@ -5,13 +5,13 @@
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" href="styles/main.css" />
   </head>
-  <body>
+  <body data-ng-app="FedTestApp">
     <div class="header">
       <h1 class="main-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
     </div>
     <div class="container">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form class="main-form" method="post" action="index.html">
+      <form class="main-form" method="post" action="index.html" data-ng-controller="MainFormController">
         <h2 class="form-heading">Nibh Hendrerit Sodales</h2>
         <label class="input-label">
           First Name:
@@ -70,5 +70,7 @@
         </p>
       </div>
     </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
