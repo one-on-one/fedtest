@@ -1,4 +1,4 @@
- body {
+body {
   font: normal 14px/1.6em sans-serif;
   background: #eee url(../images/bg.png);
   color: #666;
@@ -12,7 +12,7 @@
   color: #fff;
 }
 
-h1 {
+.main-heading {
   margin: 0;
 }
 
@@ -22,7 +22,7 @@ h1 {
   margin: 0 auto;
 }
 
-form {
+.main-form {
   float: right;
   width: 300px;
   padding: 30px;
@@ -33,7 +33,7 @@ form {
   box-shadow: 4px 4px 0 rgba(90,90, 90, .4);
 }
 
-h2 {
+.form-heading {
   margin: 0;
   padding: 20px 29px;
   margin: -29px -29px 20px;
@@ -42,7 +42,7 @@ h2 {
   color: #586e75;
 }
 
-label {
+.input-label {
   display: block;
   margin-bottom: .8em;
   color #222;
@@ -66,7 +66,7 @@ label {
   margin-right: 10px;
 }
 
-.actions button {
+.form-submit {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
