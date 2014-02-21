@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link href="styles/bootstrap.min.css" media="screen" rel="stylesheet" />
 
-
-
-<style>
-.block { display: block; }
-form.cmxform label.error { display: none; }
-.container-full {
-  margin: 0 auto;
-  width: 100%;
-}
-</style>
-
-
   </head>
   <body>
   <div class="container-full">
@@ -70,14 +58,29 @@ form.cmxform label.error { display: none; }
           <input type="text" name="email" />
         </label>
         
-        <fieldset id="ed" name="ed">
-          <legend>Current Education Level:<br/></legend>
+        <div class="input-group">
           
-        </fieldset>
+            <fieldset id="ed" name="ed">
+              <legend>Current Education Level:<br/></legend>
+            
+            </fieldset>
+          
+        </div><!--end input-group-->
         
         <div class="actions">
           <button type="submit">Request Information</button>
         </div>
+
+        
+         <div class="input-group">
+     <span class="input-group-addon" >
+        <input type="radio" style="width:30px;display: block;float:left;"><label style="display: block;float:left;">hello</label></span>
+        
+      
+    </div><!-- /input-group -->
+
+
+
       </form>
 
     </div>
@@ -106,7 +109,7 @@ form.cmxform label.error { display: none; }
           success: function(dataFromJsonp){
             edObject = dataFromJsonp;
             $.each( edObject, function( key, value ) {
-                $('#ed legend').append('<label for="'+key+'"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"/>'+value+'</label>');
+                $('#ed legend').append('<label for="'+key+'"><span class="input-group-addon"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"></span><input type="text" class="form-control">'+key+'</label>');
 
 
             });

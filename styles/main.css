@@ -21,6 +21,7 @@ h1 {
 .block { display: block; }
 form.cmxform label.error { display: none; }
 .container-full {margin: 0 auto;width: 100%;} 
+.error{color:#ff0000;}
 /*-------Form Validation Elements--------*/ 
 
 .container {
@@ -49,9 +50,17 @@ h2 {
 }
 
 label {
+ 
+  margin-bottom: .8em;
+  color #222;
+  font-size:14px;
+}
+
+legend label {
   display: block;
   margin-bottom: .8em;
   color #222;
+  font-size:14px;
 }
 
 input {
