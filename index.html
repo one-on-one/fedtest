@@ -73,11 +73,13 @@
 
         
          <div class="input-group">
-     <span class="input-group-addon" >
-        <input type="radio" style="width:30px;display: block;float:left;"><label style="display: block;float:left;">hello</label></span>
-        
-      
-    </div><!-- /input-group -->
+            <span class="input-group-addon" >
+              <input type="radio" class="radio-input">
+              <label class="radio-label">
+                hello
+              </label>
+            </span>
+        </div><!-- /input-group -->
 
 
 
@@ -109,7 +111,9 @@
           success: function(dataFromJsonp){
             edObject = dataFromJsonp;
             $.each( edObject, function( key, value ) {
-                $('#ed legend').append('<label for="'+key+'"><span class="input-group-addon"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"></span><input type="text" class="form-control">'+key+'</label>');
+                $('#ed legend').append('<div class="input-group"><span class="input-group-addon" ><input type="radio" class="radio-input" id="'+key+'" name="education" value="'+key+'"><label for="'+key+'" class="radio-label">'+value+'</label></span></div>');
+
+                  
 
 
             });
@@ -127,7 +131,7 @@
             },
            edObjectStatic = dataFromStatic;
             $.each( edObjectStatic, function( key, value ) {
-                $('#ed legend').append('<label for="'+key+'"><input class="" type="radio" id="'+key+'" name="education" value="'+key+'"/>'+value+'</label>');
+                $('#ed legend').append('<div class="input-group"><span class="input-group-addon" ><input type="radio" class="radio-input" id="'+key+'" name="education" value="'+key+'"><label for="'+key+'" class="radio-label">'+value+'</label></span></div>');
 
 
             });

@@ -54,6 +54,7 @@ label {
   margin-bottom: .8em;
   color #222;
   font-size:14px;
+
 }
 
 legend label {
@@ -70,6 +71,10 @@ input {
   border: 1px solid #93a1a1;
   box-sizing: border-box;
 }
+
+.radio-input {width:30px;display: block !important;float:left !important;}
+.radio-label {display: block !important;float:left !important;}
+
 
 .actions button {
   width: 100%;
