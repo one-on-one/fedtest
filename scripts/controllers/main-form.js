@@ -41,10 +41,12 @@ angular.module('FedTestApp.Controllers')
 
     $scope.submit = function () {
       angular.forEach($scope.mainForm, function (field, key) {
+        // This is how we filter out all of the angular fields. Kinda hacky,
+        // need to adjust this later
         if (key.charAt(0) === '$') { return; }
         field.$dirty = true;
       });
-      console.log($scope.mainForm.firstName);
+      console.log($scope.mainForm);
     };
   }
 ]);

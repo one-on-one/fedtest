@@ -6,7 +6,8 @@ angular.module('FedTestApp.Directives', [])
     restrict: 'A',
     scope: {
       field: '=fieldError',
-      fieldName: '@'
+      fieldName: '@',
+      maskError: '@'
     },
     replace: true,
     templateUrl: 'partials/field-error.html'

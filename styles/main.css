@@ -57,7 +57,7 @@ body {
   box-sizing: border-box;
 }
 
-.input-radio-option {
+.input-radio-label {
   cursor: pointer;
 }
 
@@ -81,6 +81,23 @@ body {
   cursor: pointer;
 }
 
+.field-error {
+  background-color: #fdf7f7;
+  color: #d9534f;
+  border-left: 5px solid #d9534f;
+  display: none;
+}
+.field-error.dirty.invalid {
+  display: block;
+}
+.field-error-list {
+  list-style: none;
+  padding-left: 5px;
+}
+.field-error-list-item {
+
+}
+
 .content {
   width: 520px;
   padding-left: 20px;
@@ -92,9 +109,12 @@ body {
   .banner {
     width: 100%;
   }
+  .main-form {
+    margin: 0 20px;
+  }
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 600px) {
   .main-form {
     float: none;
     margin: 0 0 20px;
