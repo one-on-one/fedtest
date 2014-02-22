@@ -3,7 +3,8 @@ angular.module('FedTestApp', [
   'FedTestApp.Controllers',
   'FedTestApp.Services',
   'FedTestApp.Filters',
-  'FedTestApp.Directives'
+  'FedTestApp.Directives',
+  'ui.mask'
 ]);
 angular.module('FedTestApp.Controllers', []);
 angular.module('FedTestApp.Services', []);

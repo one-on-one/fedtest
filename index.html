@@ -23,7 +23,7 @@
         </label>
         <label class="input-label">
           Phone Number:
-          <input class="input input-text" type="text" name="phone" data-ng-model="phone" required/>
+          <input class="input input-text" type="text" name="phone" data-ng-model="phone" required ui-mask="(999) 999-9999"/>
         </label>
         <label class="input-label">
           Email Address:
@@ -53,7 +53,8 @@
         </p>
       </div>
     </div>
-    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/controllers/main-form.js"></script>
     <script src="scripts/services/app-form.js"></script>
