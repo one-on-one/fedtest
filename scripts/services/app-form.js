@@ -34,7 +34,7 @@ angular.module('FedTestApp.Services')
       $http
         .jsonp(endpoint + '?callback=JSON_CALLBACK', {timeout: 2500})
         .success(function (data) {
-          cb(data);
+          cb(toArray(data));
         })
         .error(function (data) {
           cb(toArray(defaultEducationLevels));
