@@ -9,7 +9,7 @@ angular.module('FedTestApp.Services')
     var appForm  = {}
       , endpoint = 'http://fedtest.aws.af.cm'
       , defaultEducationLevels
-      , defaultOrder
+      , toArray
       ;
 
     // Here are the default education levels to use if the api endpoint
@@ -21,14 +21,6 @@ angular.module('FedTestApp.Services')
       mast: "Master Degree",
       doct: "Doctoral Degree"
     };
-
-    defaultOrder = [
-      'high',
-      'asso',
-      'bach',
-      'mast',
-      'doct'
-    ];
 
     /**
      * appForm.getEducationLevels
@@ -42,33 +34,31 @@ angular.module('FedTestApp.Services')
       $http
         .jsonp(endpoint + '?callback=JSON_CALLBACK')
         .success(function (data) {
-          data = appForm.educationLevelOrder(data);
-          cb(data);
+          cb(toArray(data));
         })
         .error(function (data) {
-          data = appForm.educationLevelOrder(defaultEducationLevels);
-          cb(data);
+          cb(toArray(defaultEducationLevels));
         });
     };
 
-    appForm.educationLevelOrder = function (levels) {
-      var levelArr = [];
-      angular.forEach(levels, function (val, key) {
-        if (defaultOrder.indexOf(key) !== -1) { return; }
-        levelArr.push({
-          key: key,
-          name: val
-        });
+    /**
+     * toArray
+     *
+     * Converts an object to an array of key/value pairs so that it can
+     * be ordered propertly
+     *
+     * @parameters
+     *   `object`: a flat object hash with simple key/value pairs
+     *
+     * @returns
+     *   `array`: the arrayified object.
+     */
+    toArray = function (object) {
+      var out = [];
+      angular.forEach(object, function (val, key) {
+        out.push({key: key, value: val});
       });
-      defaultOrder.map(function (level) {
-        if (levels[level]) {
-          levelArr.push({
-            key: level,
-            name: levels[level]
-          });
-        }
-      });
-      return levelArr;
+      return out;
     };
 
     return appForm;

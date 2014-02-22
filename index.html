@@ -29,10 +29,10 @@
           Email Address:
           <input class="input input-text" type="text" name="email" data-ng-model="email" required/>
         </label>
-        <div data-ng-show="educationLevels.length">
+        <div data-ng-show="educationLevels">
           <span>Current Education Level:</span>
-          <label class="input-label input-radio-label" data-ng-repeat="level in educationLevels">
-            <input class="input input-radio" type="radio" name="educationLevel" data-ng-value="level.key" data-ng-model="$parent.educationLevel">{{level.name}}
+          <label class="input-label input-radio-label" data-ng-repeat="level in educationLevels | orderBy:educationLevelOrder">
+            <input class="input input-radio" type="radio" name="educationLevel" data-ng-value="level.key" data-ng-model="$parent.educationLevel">{{level.value}}
           </label>
         </div>
         <div class="actions">
@@ -57,5 +57,6 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/controllers/main-form.js"></script>
     <script src="scripts/services/app-form.js"></script>
+    <script src="scripts/filters/to-array.js"></script>
   </body>
 </html>

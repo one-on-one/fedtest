@@ -1,5 +1,3 @@
-// MainFormController
-// ------------------
 angular.module('FedTestApp.Controllers')
 .controller('MainFormController', [
   '$scope',
@@ -7,12 +5,39 @@ angular.module('FedTestApp.Controllers')
   function ($scope, appForm) {
     'use strict';
 
+    // This is the default order that the fields should be in. If the api values
+    // end up being different later on, we'll need to change these values.
+    //
+    // The reason we need the order is because the api endpoint gives us an
+    // object with keys, and we can't rely on the order of javascript objects
+    // in the browser (at least in chrome)
+    // http://dev-answers.blogspot.com/2012/03/javascript-object-keys-being-sorted-in.html
+    var defaultOrder = [
+      'high',
+      'asso',
+      'bach',
+      'mast',
+      'doct'
+    ];
+
+    // This is where we use the appForm service to get the data
     appForm.getEducationLevels(function (data) {
       if (data) {
         $scope.educationLevels = data;
-        $scope.educationLevel  = data[0].key;
       }
     });
+
+    /**
+     * educationLevelOrder
+     *
+     * The order function to be used with the orderBy filter. It determines the
+     * order of the education levels. It uses the defaultOrder array defined
+     * above to order things. Any 'keys' that aren't in the array will be
+     * ordered first in the list
+     */
+    $scope.educationLevelOrder = function (level) {
+      return defaultOrder.indexOf(level.key);
+    };
 
     $scope.submit = function () {
       console.log($scope);
