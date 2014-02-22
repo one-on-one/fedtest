@@ -9,6 +9,6 @@ angular.module('FedTestApp.Directives', [])
       fieldName: '@'
     },
     replace: true,
-    templateUrl: 'partials/field-error.html';
-  }
+    templateUrl: 'partials/field-error.html'
+  };
 });
