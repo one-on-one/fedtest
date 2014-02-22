@@ -15,19 +15,19 @@
         <h2 class="form-heading">Nibh Hendrerit Sodales</h2>
         <label class="input-label">
           First Name:
-          <input class="input input-text" type="text" name="firstName" data-ng-model="firstName"/>
+          <input class="input input-text" type="text" name="firstName" data-ng-model="firstName" required/>
         </label>
         <label class="input-label">
           Last Name:
-          <input class="input input-text" type="text" name="lastName" data-ng-model="lastName"/>
+          <input class="input input-text" type="text" name="lastName" data-ng-model="lastName" required/>
         </label>
         <label class="input-label">
           Phone Number:
-          <input class="input input-text" type="text" name="phone" data-ng-model="phone"/>
+          <input class="input input-text" type="text" name="phone" data-ng-model="phone" required/>
         </label>
         <label class="input-label">
           Email Address:
-          <input class="input input-text" type="text" name="email" data-ng-model="email"/>
+          <input class="input input-text" type="text" name="email" data-ng-model="email" required/>
         </label>
         <div data-ng-show="educationLevels.length">
           <span>Current Education Level:</span>
@@ -55,5 +55,7 @@
     </div>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/controllers/main-form.js"></script>
+    <script src="scripts/services/app-form.js"></script>
   </body>
 </html>
