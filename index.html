@@ -9,47 +9,30 @@
     <div class="header">
       <h1 class="main-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
     </div>
-    <div class="container">
+    <div class="container" data-ng-controller="MainFormController">
       <img class="banner" src="images/banner.jpg" alt="" />
-      <form class="main-form" method="post" action="index.html" data-ng-controller="MainFormController">
+      <form class="main-form" name="mainForm" novalidate ng-submit="submit()">
         <h2 class="form-heading">Nibh Hendrerit Sodales</h2>
         <label class="input-label">
           First Name:
-          <input class="input input-text" type="text" name="first_name" />
+          <input class="input input-text" type="text" name="firstName" data-ng-model="firstName"/>
         </label>
         <label class="input-label">
           Last Name:
-          <input class="input input-text" type="text" name="last_name" />
+          <input class="input input-text" type="text" name="lastName" data-ng-model="lastName"/>
         </label>
         <label class="input-label">
           Phone Number:
-          <input class="input input-text" type="text" name="phone" />
+          <input class="input input-text" type="text" name="phone" data-ng-model="phone"/>
         </label>
         <label class="input-label">
           Email Address:
-          <input class="input input-text" type="text" name="email" />
+          <input class="input input-text" type="text" name="email" data-ng-model="email"/>
         </label>
-        <div>
+        <div data-ng-show="educationLevels.length">
           <span>Current Education Level:</span>
-          <label class="input-label input-radio-label">
-            <input class="input input-radio" type="radio" name="education_level" value="highSchool" checked>
-            High School Diploma
-          </label>
-          <label class="input-label input-radio-option">
-            <input class="input input-radio" type="radio" name="education_level" value="associates">
-            Associates Degree
-          </label>
-          <label class="input-label input-radio-option">
-            <input class="input input-radio" type="radio" name="education_level" value="bachelors">
-            Bachelors Degree
-          </label>
-          <label class="input-label input-radio-option">
-            <input class="input input-radio" type="radio" name="education_level" value="masters">
-            Masters Degree
-          </label>
-          <label class="input-label input-radio-option">
-            <input class="input input-radio" type="radio" name="education_level" value="doctoral">
-            Doctoral Degree
+          <label class="input-label input-radio-label" data-ng-repeat="level in educationLevels">
+            <input class="input input-radio" type="radio" name="educationLevel" data-ng-value="level.key" data-ng-model="educationLevel">{{level.name}}
           </label>
         </div>
         <div class="actions">
