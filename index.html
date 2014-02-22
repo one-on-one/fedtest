@@ -12,28 +12,34 @@
     </div>
     <div class="container" data-ng-controller="MainFormController">
       <img class="banner" src="images/banner.jpg" alt="">
+      <!-- Main Form -->
       <form class="main-form" name="mainForm" novalidate ng-submit="submit()">
         <h2 class="form-heading">Nibh Hendrerit Sodales</h2>
+        <!-- First Name Field -->
         <label class="input-label">
           First Name:
           <input class="input input-text" type="text" name="firstName" data-ng-model="firstName" required>
           <div data-field-error="mainForm.firstName" data-field-name="First Name"></div>
         </label>
+        <!-- Last Name Field -->
         <label class="input-label">
           Last Name:
           <input class="input input-text" type="text" name="lastName" data-ng-model="lastName" required>
           <div data-field-error="mainForm.lastName" data-field-name="Last Name"></div>
         </label>
+        <!-- Phone Number Field -->
         <label class="input-label">
           Phone Number:
           <input class="input input-text" type="text" name="phone" data-ng-model="phone" required ui-mask="(999) 999-9999">
           <div data-field-error="mainForm.phone" data-field-name="Phone Number" data-mask-error="must be a valid phone number"></div>
         </label>
+        <!-- Email Address Field -->
         <label class="input-label">
           Email Address:
           <input class="input input-text" type="email" name="email" data-ng-model="email" required>
           <div data-field-error="mainForm.email" data-field-name="Email"></div>
         </label>
+        <!-- Education Level Field -->
         <div data-ng-show="educationLevels">
           <span class="input-label">Current Education Level:</span>
           <div data-field-error="mainForm.educationLevel" data-field-name="Education Level"></div>
@@ -41,10 +47,12 @@
             <input class="input input-radio" type="radio" name="educationLevel" data-ng-value="level.key" data-ng-model="$parent.educationLevel" required>{{level.value}}
           </label>
         </div>
+        <!-- Form Submit -->
         <div class="actions">
           <button type="submit" class="form-submit">Request Information</button>
         </div>
       </form>
+      <!-- END Main Form -->
       <div class="content">
         <p>
           Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien.
