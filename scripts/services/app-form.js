@@ -42,6 +42,29 @@ angular.module('FedTestApp.Services')
     };
 
     /**
+     * appForm.submit
+     *
+     * Submits the form. TODO: hook up to actual endpoint for real response
+     *
+     * @parameters
+     *   `formData` - A hash with each property with a string value. Below are
+     *     the values needed for this form
+     *     - first_name
+     *     - last_name
+     *     - phone
+     *     - email
+     *     - edu_level
+     *   `cb` - the callback to be called when the form submission is complete.
+     *     the first parameter will be an error if there was any. The second
+     *     parameter is the if the form submission was valid or not: boolean
+     */
+    appForm.submit = function (formData, cb) {
+      // TODO: Make the actual request
+      console.log('Form Submitted', formData);
+      cb(null, true);
+    };
+
+    /**
      * toArray
      *
      * Converts an object to an array of key/value pairs so that it can
