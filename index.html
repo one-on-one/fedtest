@@ -35,7 +35,7 @@
           <div data-field-error="mainForm.email" data-field-name="Email"></div>
         </label>
         <div data-ng-show="educationLevels">
-          <span>Current Education Level:</span>
+          <span class="input-label">Current Education Level:</span>
           <div data-field-error="mainForm.educationLevel" data-field-name="Education Level"></div>
           <label class="input-label input-radio-label" data-ng-repeat="level in educationLevels | orderBy:educationLevelOrder">
             <input class="input input-radio" type="radio" name="educationLevel" data-ng-value="level.key" data-ng-model="$parent.educationLevel" required>{{level.value}}
