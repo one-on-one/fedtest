@@ -17,7 +17,6 @@ angular.module('FedTestApp.Controllers')
   'appForm',
   function ($scope, appForm) {
     appForm.getEducationLevels(function (data) {
-      console.log(data);
       if (data) {
         $scope.educationLevels = data;
         $scope.educationLevel  = data[0].key;
