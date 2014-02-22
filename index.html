@@ -17,6 +17,7 @@
         <label class="input-label">
           First Name:
           <input class="input input-text" type="text" name="firstName" data-ng-model="firstName" required>
+          <div data-field-error="mainForm.firstName" data-field-name="First Name"></div>
         </label>
         <label class="input-label">
           Last Name:
@@ -59,5 +60,11 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/controllers/main-form.js"></script>
     <script src="scripts/services/app-form.js"></script>
+    <script src="scripts/directives/field-error.js"></script>
+    <script type="text/ng-template" id="partials/field-error.html">
+      <div class="field-error" data-ng-class="{dirty: field.$dirty, invalid: field.$invalid, valid: field.$valid}">
+      <p data-ng-show="field.$error.required">{{fieldName}} is required.</p>
+    </div>
+    </script>
   </body>
 </html>

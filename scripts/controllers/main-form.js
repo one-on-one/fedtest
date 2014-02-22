@@ -40,7 +40,11 @@ angular.module('FedTestApp.Controllers')
     };
 
     $scope.submit = function () {
-      console.log($scope);
+      angular.forEach($scope.mainForm, function (field, key) {
+        if (key.charAt(0) === '$') { return; }
+        field.$dirty = true;
+      });
+      console.log($scope.mainForm.firstName);
     };
   }
 ]);
