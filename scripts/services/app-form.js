@@ -32,9 +32,9 @@ angular.module('FedTestApp.Services')
      */
     appForm.getEducationLevels = function (cb) {
       $http
-        .jsonp(endpoint + '?callback=JSON_CALLBACK')
+        .jsonp(endpoint + '?callback=JSON_CALLBACK', {timeout: 2500})
         .success(function (data) {
-          cb(toArray(data));
+          cb(data);
         })
         .error(function (data) {
           cb(toArray(defaultEducationLevels));
