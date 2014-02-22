@@ -40,13 +40,22 @@ angular.module('FedTestApp.Controllers')
     };
 
     $scope.submit = function () {
+      var submitObject;
       angular.forEach($scope.mainForm, function (field, key) {
         // This is how we filter out all of the angular fields. Kinda hacky,
         // need to adjust this later
         if (key.charAt(0) === '$') { return; }
         field.$dirty = true;
       });
-      console.log($scope.mainForm);
+      if ($scope.mainForm.$valid) {
+        submitObject = {
+          first_name: $scope.firstName,
+          last_name: $scope.lastName,
+          phone: $scope.phone,
+          email: $scope.email,
+          edu_level: $scope.educationLevel
+        };
+      }
     };
   }
 ]);
