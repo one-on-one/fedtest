@@ -5,6 +5,10 @@ angular.module('FedTestApp.Controllers')
   function ($scope, appForm) {
     'use strict';
 
+    var defaultOrder
+      , formComplete
+      ;
+
     // This is the default order that the fields should be in. If the api values
     // end up being different later on, we'll need to change these values.
     //
@@ -12,7 +16,7 @@ angular.module('FedTestApp.Controllers')
     // object with keys, and we can't rely on the order of javascript objects
     // in the browser (at least in chrome)
     // http://dev-answers.blogspot.com/2012/03/javascript-object-keys-being-sorted-in.html
-    var defaultOrder = [
+    defaultOrder = [
       'high',
       'asso',
       'bach',
@@ -55,7 +59,17 @@ angular.module('FedTestApp.Controllers')
           email: $scope.email,
           edu_level: $scope.educationLevel
         };
+        $scope.preValid = true;
+        appForm.submit(submitObject, formComplete);
       }
     };
+
+    formComplete = function (err, valid) {
+      if (err) {
+        console.log('Unexpected Error:', err);
+      }
+      $scope.validSubmission = valid;
+    };
+
   }
 ]);
