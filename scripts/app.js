@@ -5,7 +5,10 @@ angular.module('FedTestApp', [
   'FedTestApp.Filters',
   'FedTestApp.Directives',
   'ui.mask'
-]);
+])
+.run(function () {
+  FastClick.attach(document.body);
+});
 angular.module('FedTestApp.Controllers', []);
 angular.module('FedTestApp.Services', []);
 angular.module('FedTestApp.Filters', []);
