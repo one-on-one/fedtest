@@ -44,16 +44,17 @@ body {
 
 .flipper .front,
 .flipper .back {
-  position: relative;
   top: 0;
   backface-visibility: none;
+  -webkit-backface-visibility: none;
 }
 
 .flipper .front {
   z-index: 1;
+  position: relative;
 }
 .flipper .back {
-  z-index: 0;
+  z-index: -1;
   position: absolute;
   height: 100%;
   -webkit-transform: rotateY(180deg);
@@ -72,6 +73,10 @@ body {
 }
 .flip .main-form {
   box-shadow: -4px 4px 0 rgba(90, 90, 90, .4);
+}
+
+.form-back {
+  font-size: 18px;
 }
 
 .main-form,
@@ -178,7 +183,7 @@ body {
   .banner {
     width: 100%;
   }
-  .main-form {
+  .form-container {
     margin: 0 20px;
   }
   .content {
@@ -187,7 +192,7 @@ body {
 }
 
 @media all and (max-width: 600px) {
-  .main-form {
+  .form-container {
     float: none;
     margin: 0 0 20px;
     width: 100%;
