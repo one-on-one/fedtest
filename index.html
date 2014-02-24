@@ -79,13 +79,13 @@
     </div>
     <script src="scripts/app-0.0.0.min.js"></script>
     <script type="text/ng-template" id="partials/field-error.html">
-      <div class="field-error" data-ng-class="{dirty: field.$dirty, invalid: field.$invalid, valid: field.$valid}">
+      <div class="field-error" data-ng-show="field.$dirty && field.$invalid && field.$hasVisited">
         <ul class="field-error-list">
           <li class="field-error-list-item" data-ng-show="field.$error.required">{{fieldName}} is required.</li>
           <li class="field-error-list-item" data-ng-show="field.$error.mask">{{fieldName}} {{maskError}}</li>
           <li class="field-error-list-item" data-ng-show="field.$error.email">{{fieldName}} must be a valid email address</li>
         </ul>
-    </div>
+      </div>
     </script>
   </body>
 </html>
