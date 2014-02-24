@@ -1,0 +1,20 @@
+{
+  "name": "fedtest",
+  "version": "0.0.0",
+  "description": "Keith Smith's Front-end development test package",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ksmithut/fedtest.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksmithut/fedtest/issues"
+  },
+  "homepage": "https://github.com/ksmithut/fedtest",
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-contrib-uglify": "^0.3.2",
+    "bower-files": "0.0.3",
+    "grunt-contrib-watch": "^0.5.3"
+  }
+}
