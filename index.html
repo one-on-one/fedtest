@@ -13,8 +13,8 @@
     <div class="container" data-ng-controller="MainFormController">
       <img class="banner" src="images/banner.jpg" alt="">
       <!-- Main Form -->
-      <div class="form-container flipper" data-ng-class="{flip: validSubmission}">
-        <form class="main-form front" name="mainForm" novalidate ng-submit="submit()">
+      <div class="form-container">
+        <form class="main-form" name="mainForm" novalidate data-ng-submit="submit()" data-ng-hide="validSubmission">
           <h2 class="form-heading">Nibh Hendrerit Sodales</h2>
           <!-- First Name Field -->
           <label class="input-label">
@@ -56,7 +56,7 @@
             </div>
           </div>
         </form>
-        <div class="form-back back">
+        <div class="form-back" data-ng-show="validSubmission">
           <h2 class="form-heading">Thank You</h2>
           <p>Your submission has been entered into our records.</p>
           <p>Someone will be contacting you shortly to help you along your way.</p>

@@ -28,41 +28,7 @@ body {
   float: right;
   margin: -280px 20px 0;
   width: 300px;
-}
-
-.flipper {
   position: relative;
-  -webkit-transition: all 0.4s ease-in-out;
-          transition: all 0.4s ease-in-out;
-
-}
-
-.flipper.flip {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.flipper .front,
-.flipper .back {
-  top: 0;
-  -webkit-backface-visibility: none;
-          backface-visibility: none;
-}
-
-.flipper .front {
-  z-index: 1;
-  position: relative;
-}
-.flipper .back {
-  position: absolute;
-  height: 100%;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-transition: z-index 0s ease-in-out 0.2s;
-          transition: z-index 0s ease-in-out 0.2s;
-}
-.flipper.flip .back {
-  z-index: 2;
 }
 
 .form-back {
@@ -71,11 +37,6 @@ body {
 
 .main-form {
   box-shadow: 4px 4px 0 rgba(90, 90, 90, .4);
-  -webkit-transition: all 0.4s ease-in-out;
-          transition: all 0.4s ease-in-out;
-}
-.flip .main-form {
-  box-shadow: -4px 4px 0 rgba(90, 90, 90, .4);
 }
 
 .main-form,
