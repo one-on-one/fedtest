@@ -2,50 +2,141 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link href="styles/bootstrap.min.css" media="screen" rel="stylesheet" />
+
   </head>
   <body>
-    <div class="header">
-      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-    </div>
-    <div class="container">
-      <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
-        <h2>Nibh Hendrerit Sodales</h2>
-        <label>
-          First Name:
-          <input type="text" name="first_name" />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="last_name" />
-        </label>
-        <label>
-          Phone Number:
-          <input type="text" name="phone" />
-        </label>
-        <label>
-          Email Address:
-          <input type="text" name="email" />
-        </label>
-        <div class="actions">
-          <button type="submit">Request Information</button>
-        </div>
-      </form>
-      <div class="content">
-        <p>
-          Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. 
-          Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis 
-          pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo 
-          sapien, faucibus eu aliquet et, molestie quis orci.
-        </p>
-        <p>
-          Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae 
-          lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget 
-          semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.
-        </p>
-      </div>
-    </div>
+  <div class="container spacer">
+        <div class="jumbotron header"><h1>Get More From Your Education!</h1></div>
+
+
+        <div class="row">
+          
+          <div class="col-sm-4 spacer">
+            <form class="img-rounded formz cmxform" role="form" method="post" action="test3.html" id="myForm">
+              <legend>Contact Information</legend>
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstname" class="form-control" required="required" id="firstName" placeholder="Add First Name"/>
+              </div>  
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" class="form-control" required="required" id="lastName" placeholder="Add Last Name"/>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" name="phone" class="form-control" required="required" id="phone" placeholder="Add Phone"/>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" class="form-control" required="required" id="email" placeholder="Add email"/>
+              </div> 
+              <div class="input-group">
+                <fieldset id="ed" name="ed">
+                  <legend><span class="font-size:10px !important;">Current Education Level:</span><br/></legend>
+                  <!--jquery content appended here-->
+                </fieldset>
+              </div><!--end input-group--> 
+                 
+              <div class="actions">
+                <button type="submit">Request Information</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-sm-8 spacer">
+              <img src="images/banner.jpg" class="img-responsive img-rounded" alt="Responsive image" />
+              <div class="row">
+                <div class="col-sm-12 spacer">
+                    <p>Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo sapien, faucibus eu aliquet et, molestie quis orci.</p>
+
+                    <p>Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.</p>
+                  </div> 
+              </div>
+            
+          </div><!--end 8-->
+
+          
+
+        </div><!--end row-->
+        
+    </div><!--end container-->
+
+  <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/additional-methods.min.js"></script>    
+
+   
+    <script>
+
+        $.validator.setDefaults({
+  submitHandler: function() {
+    alert("submitted!");
+  }
+});
+
+
+
+      $(document).ready(function(){
+        $.ajax({
+          url: 'http://fedtest.aws.af.cm/',
+          dataType: 'jsonp',
+          success: function(dataFromJsonp){
+            edObject = dataFromJsonp;
+            $.each( edObject, function( key, value ) {
+                $('#ed legend').append('<div class="input-group rounded"><span class="input-group-addon" ><input type="radio" class="radio-input rounded" id="'+key+'" name="education" value="'+key+'"><label for="'+key+'" class="radio-label">'+value+'</label></span></div>');
+
+                  
+
+
+            });
+            $('#ed input').first().attr("required", "required");
+          },
+          error: function(request,error) 
+          {
+           dataFromStatic = {
+              "high": "High School Diploma #2",
+              "some": "Some College #2",
+              "asso": "Associate Degree #2",
+              "bach": "Bachelor Degree #2",
+              "mast": "Master Degree #2",
+              "doct": "Doctoral Degree #2"
+            },
+           edObjectStatic = dataFromStatic;
+            $.each( edObjectStatic, function( key, value ) {
+                $('#ed legend').append('<div class="input-group"><span class="input-group-addon" ><input type="radio" class="radio-input" id="'+key+'" name="education" value="'+key+'"><label for="'+key+'" class="radio-label">'+value+'</label></span></div>');
+
+
+            });
+            $('#ed input').first().attr("required", "required");
+          }
+        });
+        
+       $("#myForm").validate({
+
+             rules: {
+              first_name: {required: true},
+              last_name: {required: true},
+              phone: {required: true,
+                      phoneUS: true},
+              email: {
+                required: true,
+                email: true
+              },
+              ed: {
+                required:true
+              }
+              
+            } 
+
+         });
+        
+      });//end document ready
+
+    </script>
   </body>
 </html>
