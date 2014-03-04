@@ -45,7 +45,8 @@
             Education Level:
             <div ng-repeat="(key, label) in edu_levels.choices">
                 <label ng-click="$parent.edu_level.$valid = true">
-                <input type="radio" ng-model="edu_level" name="edu_level" ng-value="key" ng-required='true' /><span style="display:inline;">{{label}}</span></label>
+                    <input type="radio" ng-model="$parent.edu_level" name="edu_level" ng-value="key" ng-required='true' /><span style="display:inline;">{{label}}</span>
+                </label>
             </div>
             <div class="actions">
                 <button type="submit" ng-disabled="myForm.$invalid || myForm.$pristine">Request Information</button>
