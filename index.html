@@ -27,22 +27,22 @@
         <form method="post" ng-model="myForm" name="myForm" ng-submit="submit()" novalidate autocomplete="off">
             <h2>Nibh Hendrerit Sodales</h2>
             <label>
-                First Name:
+                First Name:<span class="required" ng-show="myForm.first_name.$error.required">*</span>
                 <input type="text" name="first_name" ng-model="first_name" required ng-required="true"/>
             </label>
             <label>
-                Last Name:
+                Last Name:<span class="required" ng-show="myForm.last_name.$error.required">*</span>
                 <input type="text" name="last_name" ng-model="last_name" required ng-required="true"/>
             </label>
             <label>
-                Phone Number:
+                Phone Number:<span class="required" ng-show="myForm.phone.$error.pattern || myForm.phone.$error.required">*</span>
                 <input type="tel" name="phone" ng-model="phone" input-mask="{mask: '(999) 999-9999'}" ng-pattern="/^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/" required ng-required="true"/>
             </label>
             <label>
-                Email Address:
+                Email Address:<span class="required" ng-show="myForm.email.$error.required || myForm.email.$error.pattern">*</span>
                 <input type="email" name="email" ng-model="email" ng-pattern="/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/" required ng-required="true"/>
             </label>
-            Education Level:
+            Education Level:<span class="required" ng-show="myForm.edu_level.$error.required">*</span>
             <div ng-repeat="(key, label) in edu_levels.choices">
                 <label ng-click="$parent.edu_level.$valid = true">
                     <input type="radio" ng-model="$parent.edu_level" name="edu_level" ng-value="key" ng-required='true' /><span style="display:inline;">{{label}}</span>
