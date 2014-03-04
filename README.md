@@ -54,7 +54,7 @@ to select from the following options with **radio buttons**:
 available via an API. Make a JSONP request to `http://fedtest.aws.af.cm/` and
 populate the options in the form using the result.
 
-### Add JavaScirpt Validation
+### Add JavaScript Validation
 
 As a person filling out the form on the landing page I need to receive feedback
 ensuring I complete the form according to the following validation rules:

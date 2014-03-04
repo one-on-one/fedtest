@@ -1,51 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" ng-app="myApp">
+<head>
     <meta charset="utf-8" />
     <title>Front-End Developer Test</title>
     <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body>
+</head>
+<body ng-controller="mainController">
     <div class="header">
-      <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
     </div>
     <div class="container">
-      <img class="banner" src="images/banner.jpg" alt="" />
-      <form method="post" action="index.html">
-        <h2>Nibh Hendrerit Sodales</h2>
-        <label>
-          First Name:
-          <input type="text" name="first_name" />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="last_name" />
-        </label>
-        <label>
-          Phone Number:
-          <input type="text" name="phone" />
-        </label>
-        <label>
-          Email Address:
-          <input type="text" name="email" />
-        </label>
-        <div class="actions">
-          <button type="submit">Request Information</button>
+        <img class="banner" src="images/banner.jpg" alt="" />
+        <div class="content">
+            <p>
+                Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. 
+                Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis 
+                pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo 
+                sapien, faucibus eu aliquet et, molestie quis orci.
+            </p>
+            <p>
+                Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae 
+                lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget 
+                semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.
+            </p>
         </div>
-      </form>
-      <div class="content">
-        <p>
-          Aliquam sed nibh elit. Morbi non augue eu turpis dictum convallis sed et sapien. 
-          Donec ac pretium nisi. Cras ac erat ut nibh hendrerit sodales eget in orci. Duis 
-          pellentesque gravida orci ac ornare. In hac habitasse platea dictumst. Sed justo 
-          sapien, faucibus eu aliquet et, molestie quis orci.
-        </p>
-        <p>
-          Vivamus pulvinar, felis sed porttitor luctus, ligula nisl hendrerit nibh, vitae 
-          lobortis massa odio at elit. Sed et felis metus, nec eleifend dui. Quisque eget 
-          semper eros. Etiam gravida lobortis nibh, vitae viverra velit rhoncus sodales.
-        </p>
-      </div>
+        <form method="post" ng-model="myForm" name="myForm" ng-submit="submit()" novalidate autocomplete="off">
+            <h2>Nibh Hendrerit Sodales</h2>
+            <label>
+                First Name:<span class="required" ng-show="myForm.first_name.$error.required">*</span>
+                <input type="text" name="first_name" ng-model="first_name" required ng-required="true"/>
+            </label>
+            <label>
+                Last Name:<span class="required" ng-show="myForm.last_name.$error.required">*</span>
+                <input type="text" name="last_name" ng-model="last_name" required ng-required="true"/>
+            </label>
+            <label>
+                Phone Number:<span class="required" ng-show="myForm.phone.$error.pattern || myForm.phone.$error.required">*</span>
+                <input type="tel" name="phone" ng-model="phone" input-mask="{mask: '(999) 999-9999'}" ng-pattern="/^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/" required ng-required="true"/>
+            </label>
+            <label>
+                Email Address:<span class="required" ng-show="myForm.email.$error.required || myForm.email.$error.pattern">*</span>
+                <input type="email" name="email" ng-model="email" ng-pattern="/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/" required ng-required="true"/>
+            </label>
+            Education Level:<span class="required" ng-show="myForm.edu_level.$error.required">*</span>
+            <div ng-repeat="(key, label) in edu_levels.choices">
+                <label ng-click="$parent.edu_level.$valid = true">
+                    <input type="radio" ng-model="$parent.edu_level" name="edu_level" ng-value="key" ng-required='true' /><span style="display:inline;">{{label}}</span>
+                </label>
+            </div>
+            <div class="actions">
+                <button type="submit" ng-disabled="myForm.$invalid || myForm.$pristine">Request Information</button>
+            </div>
+        </form>
     </div>
-  </body>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="lib/jQuery/jquery.inputmask.js"></script>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+</body>
 </html>
