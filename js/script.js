@@ -54,14 +54,14 @@ $(document).ready(function(){
 		
 		error_string = 'The following errors occured: ';
 		if($('input[name="first_name"]').val() == ''){
-			$('input[name="first_name"]').css('border','1px solid red');
+			$('input[name="first_name"]').css('border','1px solid blue');
 			error_count++;
 			error_string += 'First Name, ';
 		} else {
 			$('input[name="first_name"]').css('border','1px solid #93a1a1');
 		}
 		if($('input[name="last_name"]').val() == ''){
-			$('input[name="last_name"]').css('border','1px solid red');
+			$('input[name="last_name"]').css('border','1px solid blue');
 			error_count++;
 			error_string += 'Last Name, ';	
 		} else {
@@ -75,7 +75,7 @@ $(document).ready(function(){
 			$('input[name="phone"]').css('border','1px solid #93a1a1');
 		}
 		if($('input[name="email"]').val() == '' || !errObj.validateEmail($('input[name="email"]').val())){
-			$('input[name="email"]').css('border','1px solid red');
+			$('input[name="email"]').css('border','1px solid blue');
 			error_count++;
 			error_string += 'Email is invalid, ';	
 		} else {
