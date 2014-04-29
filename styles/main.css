@@ -45,7 +45,7 @@ h2 {
 label {
   display: block;
   margin-bottom: .8em;
-  color #222;
+  color: #222;
 }
 
 input {
@@ -75,3 +75,75 @@ input {
   padding-left: 20px;
 }
 
+/*jkay additions*/
+.education_level{
+	min-height:200px;	
+}
+.error_header {
+	background-color: #800020;
+	font-weight: bold;
+	display:none;
+	padding-top: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	position: fixed;
+	width: 100%;
+	height: 62px;
+	top: -102px;
+	z-index: 5;
+}
+.content {
+  width: 520px;
+  padding-left: 20px;
+}
+
+.education_level{
+	min-height:200px;	
+}
+input[type=radio]{
+	float:left;
+	width:7%;
+	margin-top: 5px;
+}
+.edu_holder{
+	float:left;
+	width: 50%;
+}
+span.phone_desc{
+	font-size:10px;
+	font-style:italic;
+}
+.clear{
+	clear: both;
+}
+@media screen and (max-width: 640px) {
+	h1{
+		line-height: 28px;
+	}
+	img.banner{
+		width: 100%;
+	}
+	.container {
+		width: 300px;
+		margin: 0 auto;
+	}
+	form{
+		width: 238px;
+		margin:0;
+		float: left;
+		box-shadow:none;
+	}
+	.edu_holder {
+		width: 88%;
+	}
+	.error_header {
+		padding: 20px 0 40px 0;
+	}
+	.content {
+		width: 100%;
+		padding: 10px 0px;
+		float: left;
+		text-align: justify;
+	}
+}
